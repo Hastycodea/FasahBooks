@@ -36,7 +36,7 @@ const Navbar = () => {
             <FontAwesomeIcon className="text-2xl" icon={faMagnifyingGlass} />
           </div>
         </div>
-        <div className="flex space-x-3 text-2xl ">
+        <div className="flex space-x-3 text-2xl text-gray-600 ">
           <FontAwesomeIcon icon={faUser} />
           <FontAwesomeIcon icon={faHeart} />
           <FontAwesomeIcon icon={faCartShopping} />
@@ -48,7 +48,7 @@ const Navbar = () => {
           <p>Browse Categories</p>
           <FontAwesomeIcon icon={faChevronDown} />
         </div>
-        <ul className="flex space-x-10 justify-center text-sm font-medium w-9/12">
+        <ul className="flex space-x-10 justify-center text-sm font- w-9/12">
           <li>Home</li>
           <li>All Books</li>
           <li>Gift Card</li>
