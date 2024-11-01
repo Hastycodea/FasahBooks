@@ -15,8 +15,8 @@ import logo from "../assets/logo.png";
 
 const Navbar = () => {
   return (
-    <div className="px-5 ">
-      <div className="flex justify-between items-center text-sm text-gray-600 border-b border-gray-200 py-3">
+    <div className="px-5 w-[100vw]  ">
+      <div className="md:flex hidden justify-between items-center text-sm text-gray-600 border-b border-gray-200 py-3">
         <div className="flex space-x-3 items-center">
           <FontAwesomeIcon icon={faXTwitter} />
           <FontAwesomeIcon icon={faWhatsapp} />
@@ -32,17 +32,21 @@ const Navbar = () => {
         <div className="flex items-center">
           <img src={logo} alt="" className="w-24 h-auto" />
           <div className="flex mx-5 pb-3  justify-between items-center border-b border-gray-200">
-            <input type="text" placeholder="Product Search" className="p-1.5 outline-none" />
+            <input
+              type="text"
+              placeholder="Product Search"
+              className="p-1.5 outline-none"
+            />
             <FontAwesomeIcon className="text-2xl" icon={faMagnifyingGlass} />
           </div>
         </div>
-        <div className="flex space-x-3 text-2xl text-gray-600 ">
+        <div className="hidden md:flex space-x-3 text-2xl text-gray-600 ">
           <FontAwesomeIcon icon={faUser} />
           <FontAwesomeIcon icon={faHeart} />
           <FontAwesomeIcon icon={faCartShopping} />
         </div>
       </div>
-      <div className="flex  items-center border-b text-sm">
+      <div className="hidden md:flex  items-center border-b text-sm">
         <div className="flex space-x-3 items-center p-3 bg-black text-white">
           <FontAwesomeIcon icon={faBars} />
           <p>Browse Categories</p>

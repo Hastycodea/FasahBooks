@@ -42,8 +42,8 @@ const Products = () => {
   ];
 
   return (
-    <div>
-      <div className="grid grid-cols-6 gap-4 px-6">
+    <div className="w-[100%]" >
+      <div className="grid grid-cols-2 md:grid-cols-6 gap-4 px-6">
         {books.map((book) => (
           // eslint-disable-next-line react/jsx-key
           <div className="flex flex-col">
@@ -76,7 +76,7 @@ const Products = () => {
         </p>
         <span className="flex-grow h-px bg-gray-300"></span>
       </div>
-      <div className="grid grid-cols-6 gap-4 px-6">
+      <div className="grid grid-cols-2 md:grid-cols-6 gap-4 px-6">
         {books.map((book) => (
           // eslint-disable-next-line react/jsx-key
           <div className="flex flex-col">
