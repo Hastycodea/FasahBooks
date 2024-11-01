@@ -10,7 +10,7 @@ import {
 const Footer = () => {
   return (
     <div className="mt-10">
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-6 items-center  px-[5%] py-[20px] mx-auto bg-gray-100">
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-6 items-center justify-center  px-[5%] py-[20px] mx-auto bg-gray-100">
         <div className="flex items-center gap-3">
           <FontAwesomeIcon className="text-[#D89A0D] text-3xl" icon={faTruck} />
           <div className="text-xs text-gray-800">
