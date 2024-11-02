@@ -69,6 +69,7 @@ const Navbar = () => {
       </div>
 
       {/* mobile navigation icon */}
+      <div>
       <div className="flex pt-1 justify-between items-center md:hidden">
         <div onClick={toggleNav}>
           {nav ? (
@@ -85,10 +86,23 @@ const Navbar = () => {
         </div>
       </div>
 
+      </div>
+
       {/* mobile navigation menu */}
-      {/* <div className={ nav ? 'fixed md:hidden top-12 left-0  w-full h-[50%] z-10 ease-in duration-500 bg-white' : 'ease-out fixed md:hidden '}> */}
-      <div className={ nav ? 'fixed md:hidden top-12 left-0  w-full h-[50%] z-10 ease-in duration-500 bg-white' : 'fixed ease-out w-full left-[-100%] h-[50%] z-10 md:hidden duration-500 top-12 bottom-0 bg-white  '}>
-        <ul className="flex flex-col px-3 space-y-4 justify-center text-sm ">
+      {/* <div className={ nav ? 'fixed md:hidden top-12 left-0  w-full h-[50%] z-10 ease-in duration-300 bg-white' : 'ease-out fixed md:hidden '}> */}
+      <div
+        className={
+          nav
+            ? "fixed md:hidden top-12 left-0  w-full h-[50%] z-10 ease-in duration-300 bg-white opacity-100"
+            : "fixed ease-out w-full  left-0 h-[50%] z-10 md:hidden duration-300 opacity-0 bg-white  "
+        }
+      >
+        <div className="flex space-x-2 text-[10px] text-gray-500 items-center justify-center py-2 border-t">
+          <FontAwesomeIcon icon={faPhone} />
+          <p>+254 710 594179</p>
+        </div>
+
+        <ul className="flex flex-col p-3 space-y-4 justify-center text-xs border-b border-t">
           <li>Home</li>
           <li>All Books</li>
           <li>Gift Card</li>
@@ -96,6 +110,24 @@ const Navbar = () => {
           <li>Contact Us</li>
         </ul>
 
+        <div className="flex flex-col px-3 py-3 space-y-4 text-sm border-b">
+          <div className="flex space-x-2 items-center">
+            <FontAwesomeIcon icon={faUser} />
+            <p className="text-xs">My Account</p>
+          </div>
+          <div className="flex space-x-2 items-center">
+            <FontAwesomeIcon icon={faHeart} />
+            <p className="text-xs">Wishlist</p>
+          </div>
+        </div>
+        <div className="p-3 flex space-x-3 items-center justify-center">
+          <FontAwesomeIcon icon={faXTwitter} />
+          <FontAwesomeIcon icon={faWhatsapp} />
+        </div>
+        <div className="flex items-center justify-center space-x-2 text-xs text-gray-500 p-3">
+          <FontAwesomeIcon icon={faClock} />
+          <p>Mon - Fri: 9am - 5pm | Sat 9am - 3pm</p>
+        </div>
       </div>
     </div>
   );
