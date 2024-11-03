@@ -50,7 +50,7 @@ const Products = () => {
             <img
               src={book.image}
               alt=""
-              className="h-[280px] w-[100%] object-contain"
+              className="h-[280px] w-[100%] object-contain hover:scale-95 duration-300 ease-out"
             />
             <p className="text-sm text-gray-500">{book.name}</p>
             <p className="text-sm text-gray-500">{book.price}</p>
@@ -62,7 +62,7 @@ const Products = () => {
             <img
               src={book.image}
               alt=""
-              className="h-[280px] w-[100%] object-contain"
+              className="h-[280px] w-[100%] object-contain hover:scale-95 duration-300 ease-out"
             />
             <p className="text-sm text-gray-500">{book.name}</p>
             <p className="text-sm text-gray-500">{book.price}</p>
@@ -83,7 +83,7 @@ const Products = () => {
             <img
               src={book.image}
               alt=""
-              className="h-[280px] w-[100%] object-contain"
+              className="h-[280px] w-[100%] object-contain hover:scale-95 duration-300 ease-out"
             />
             <p className="text-sm text-gray-500">{book.name}</p>
             <p className="text-sm text-gray-500">{book.price}</p>
