@@ -23,7 +23,7 @@ const Navbar = () => {
   };
 
   return (
-    <div className="px-2 md:px-5 w-[100vw]  ">
+    <div className="px-2 md:px-5 w-full  ">
       <div className="md:flex hidden justify-between items-center text-sm text-gray-600 border-b border-gray-200 py-3">
         <div className="flex space-x-3 items-center">
           <FontAwesomeIcon
