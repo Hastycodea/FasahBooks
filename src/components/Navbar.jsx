@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { Link } from "react-router-dom";
 import { faXTwitter, faWhatsapp } from "@fortawesome/free-brands-svg-icons";
 import {
   faClock,
@@ -43,7 +44,9 @@ const Navbar = () => {
       </div>
       <div className="hidden md:flex items-center justify-between py-3">
         <div className="flex items-center">
-          <img src={logo} alt="" className="w-24 h-auto" />
+          <Link to="/">
+            <img src={logo} alt="" className="w-24 h-auto" />
+          </Link>
           <div className="flex mx-5 pb-3  justify-between items-center border-b border-gray-200 focus-within:border-gray-600 transition-colors duration-300">
             <input
               type="text"
@@ -78,11 +81,31 @@ const Navbar = () => {
           <FontAwesomeIcon icon={faChevronDown} />
         </div>
         <ul className="flex space-x-10 justify-center text-sm font- w-9/12">
-          <li className="hover:text-[#DB980A] duration-300 cursor-pointer">Home</li>
-          <li className="hover:text-[#DB980A] duration-300 cursor-pointer">All Books</li>
-          <li className="hover:text-[#DB980A] duration-300 cursor-pointer">Gift Card</li>
-          <li className="hover:text-[#DB980A] duration-300 cursor-pointer">About Us</li>
-          <li className="hover:text-[#DB980A] duration-300 cursor-pointer">Contact Us</li>
+          <Link to="/">
+            <li className="hover:text-[#DB980A] duration-300 cursor-pointer">
+              Home
+            </li>
+          </Link>
+          <Link to="books">
+            <li className="hover:text-[#DB980A] duration-300 cursor-pointer">
+              All Books
+            </li>
+          </Link>
+          <Link to="gift">
+            <li className="hover:text-[#DB980A] duration-300 cursor-pointer">
+              Gift Card
+            </li>
+          </Link>
+          <Link to="about">
+            <li className="hover:text-[#DB980A] duration-300 cursor-pointer">
+              About Us
+            </li>
+          </Link>
+          <Link to="contact">
+            <li className="hover:text-[#DB980A] duration-300 cursor-pointer">
+              Contact Us
+            </li>
+          </Link>
         </ul>
       </div>
 
@@ -97,7 +120,9 @@ const Navbar = () => {
             )}{" "}
             <span> MENU</span>
           </div>
-          <img src={logo} alt="" className="w-12 h-auto" />
+          <Link to="/">
+            <img src={logo} alt="" className="w-12 h-auto" />
+          </Link>
           <div className="text-gray-800 space-x-2">
             <FontAwesomeIcon icon={faMagnifyingGlass} />
             <FontAwesomeIcon icon={faCartShopping} />
@@ -120,11 +145,31 @@ const Navbar = () => {
         </div>
 
         <ul className="flex flex-col p-3 space-y-4 justify-center text-xs border-b border-t">
-          <li>Home</li>
-          <li>All Books</li>
-          <li>Gift Card</li>
-          <li>About Us</li>
-          <li>Contact Us</li>
+          <Link to="/">
+            <li className="hover:text-[#DB980A] duration-300 cursor-pointer">
+              Home
+            </li>
+          </Link>
+          <Link to="books">
+            <li className="hover:text-[#DB980A] duration-300 cursor-pointer">
+              All Books
+            </li>
+          </Link>
+          <Link to="gift">
+            <li className="hover:text-[#DB980A] duration-300 cursor-pointer">
+              Gift Card
+            </li>
+          </Link>
+          <Link to="about">
+            <li className="hover:text-[#DB980A] duration-300 cursor-pointer">
+              About Us
+            </li>
+          </Link>
+          <Link to="contact">
+            <li className="hover:text-[#DB980A] duration-300 cursor-pointer">
+              Contact Us
+            </li>
+          </Link>
         </ul>
 
         <div className="flex flex-col px-3 py-3 space-y-4 text-sm border-b">
