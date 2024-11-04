@@ -60,18 +60,24 @@ const Navbar = () => {
           </div>
         </div>
         <div className="space-x-3 text-2xl text-gray-600 ">
-          <FontAwesomeIcon
-            className="hover:text-[#DB980A] duration-300"
-            icon={faUser}
-          />
-          <FontAwesomeIcon
-            className="hover:text-[#DB980A] duration-300"
-            icon={faHeart}
-          />
-          <FontAwesomeIcon
-            className="hover:text-[#DB980A] duration-300"
-            icon={faCartShopping}
-          />
+          <Link to="/user">
+            <FontAwesomeIcon
+              className="hover:text-[#DB980A] duration-300"
+              icon={faUser}
+            />
+          </Link>
+          <Link to="/wishlist">
+            <FontAwesomeIcon
+              className="hover:text-[#DB980A] duration-300"
+              icon={faHeart}
+            />
+          </Link>
+          <Link to="/cart">
+            <FontAwesomeIcon
+              className="hover:text-[#DB980A] duration-300"
+              icon={faCartShopping}
+            />
+          </Link>
         </div>
       </div>
       <div className="hidden md:flex  items-center border-b text-sm">
@@ -174,11 +180,15 @@ const Navbar = () => {
 
         <div className="flex flex-col px-3 py-3 space-y-4 text-sm border-b">
           <div className="flex space-x-2 items-center">
-            <FontAwesomeIcon icon={faUser} />
+            <Link to="/user">
+              <FontAwesomeIcon icon={faUser} />
+            </Link>{" "}
             <p className="text-xs">My Account</p>
           </div>
           <div className="flex space-x-2 items-center">
-            <FontAwesomeIcon icon={faHeart} />
+            <Link to="/wishlist">
+              <FontAwesomeIcon icon={faHeart} />
+            </Link>
             <p className="text-xs">Wishlist</p>
           </div>
         </div>

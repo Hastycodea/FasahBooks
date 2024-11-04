@@ -2,7 +2,7 @@ import React from 'react'
 
 const Gift = () => {
   return (
-    <div>Gift Page to be Added</div>
+    <div>Gift Page to be added</div>
   )
 }
 

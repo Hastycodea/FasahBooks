@@ -49,6 +49,7 @@ const Contact = () => {
             id=""
             className="bg-gray-100 p-[10px] rounded-[10px] outline-none "
           ></textarea>
+          <button className="bg-blue-600 text-white mt-2 rounded-lg p-2">SEND MESSAGE</button>
         </form>
         <div className="flex flex-col  items-center justify-center   py-5 text-gray-500 md:text-lg text-xs md:px-0 px-6  mx-auto  font-light w-full md:w-[55%] shadow-md p-2 rounded-[10px] text-center">
           <p className="flex md:text-center ">

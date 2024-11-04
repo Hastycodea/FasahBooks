@@ -48,33 +48,33 @@ const Footer = () => {
       </div>
 
       <div className="py-10 bg-black  px-[5%] mx-auto grid grid-cols-2 md:grid-cols-4 gap-4">
-        <div className="text-sm text-white text-left">
+        <div className="text-xs md:text-sm text-white text-left">
           <h6 className="mb-2 font-semibold">TALK TO US</h6>
-          <div className="text-gray-500">
+          <div className="text-gray-500 space-y-1">
             <p>0723242534/07898738</p>
             <p>fasahbooks@gmail.com</p>
             <p>The Bazzar 1st Floor</p>
           </div>
         </div>
-        <div className="text-sm text-white text-left">
+        <div className="text-xs md:text-sm text-white text-left">
           <h6 className="mb-2 font-semibold">ABOUT FASAH</h6>
-          <div className="text-gray-500">
+          <div className="text-gray-500 space-y-1">
             <p>Our Story</p>
             <p>Blog</p>
             <p>Contact Us</p>
           </div>
         </div>
-        <div className="text-sm text-white text-left">
+        <div className="text-xs md:text-sm text-white text-left">
           <h6 className="mb-2 font-semibold">USEFUL LINKS</h6>
-          <div className="text-gray-500">
+          <div className="text-gray-500 space-y-1">
             <p>Delivery Policy</p>
             <p>Return Policy</p>
             <p>Gift Card Balance</p>
           </div>
         </div>
-        <div className="text-sm text-white text-left">
+        <div className="text-xs md:text-sm text-white text-left">
           <h6 className="mb-2 font-semibold">TALK TO US</h6>
-          <div className="text-gray-500">
+          <div className="text-gray-500 space-y-1">
             <p>0723242534/07898738</p>
             <p>fasahbooks@gmail.com</p>
             <p>The Bazzar 1st Floor</p>

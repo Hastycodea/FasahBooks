@@ -7,6 +7,9 @@ import Books from "./pages/Books";
 import Contact from "./pages/Contact";
 import Gift from "./pages/Gift";
 import About from "./pages/About";
+import User from "./pages/User";
+import Wishlist from "./pages/Wishlist";
+import Cart from "./pages/Cart";
 
 function App() {
   return (
@@ -19,6 +22,9 @@ function App() {
           <Route path="/contact" element={<Contact />} />
           <Route path="/gift" element={<Gift />} />
           <Route path="/about" element={<About />} />
+          <Route path="/user" element={<User />} />
+          <Route path="/wishlist" element={<Wishlist />} />
+          <Route path="/cart" element={<Cart />} />
         </Routes>
         <Footer />
       </Router>
