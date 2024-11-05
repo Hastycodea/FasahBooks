@@ -66,12 +66,23 @@ const Products = () => {
                 />
               </div>
               <FontAwesomeIcon
-                  className="hover:text-[#DB980A] duration-300 bg-white p-2 rounded-[50%] shadow-md text-gray-600 "
+                className="hover:text-[#DB980A] duration-300 bg-white p-2 rounded-[50%] shadow-md text-gray-600 "
                 icon={faCartShopping}
               />
             </div>
             <p className="text-sm text-gray-500">{book.name}</p>
             <p className="text-sm text-gray-500">{book.price}</p>
+            <div className="flex md:hidden items-center justify-between mx-auto space-x-2 ">
+              <FontAwesomeIcon
+                className="hover:text-[#DB980A] duration-300 bg-white p-2 rounded-[50%] shadow-md text-gray-600"
+                icon={faHeart}
+              />
+              <FontAwesomeIcon
+                className="hover:text-[#DB980A] duration-300 bg-white p-2 rounded-[50%] shadow-md text-gray-600 "
+                icon={faCartShopping}
+              />
+            </div>
+
           </div>
         ))}
 

@@ -23,7 +23,7 @@ const Navbar = () => {
   };
 
   return (
-    <div className="px-2 md:px-5 w-full  ">
+    <div className="px-2 md:px-5 w-full md:static sticky top-0 z-10 bg-white py-2">
       <div className="md:flex hidden justify-between items-center text-sm text-gray-600 border-b border-gray-200 py-3">
         <div className="flex space-x-3 items-center">
           <FontAwesomeIcon
@@ -116,7 +116,7 @@ const Navbar = () => {
       </div>
 
       {/* mobile navigation icon */}
-      <div>
+      <div className="">
         <div className="flex pt-1 justify-between items-center md:hidden">
           <div onClick={toggleNav}>
             {nav ? (
@@ -131,7 +131,9 @@ const Navbar = () => {
           </Link>
           <div className="text-gray-800 space-x-2">
             <FontAwesomeIcon icon={faMagnifyingGlass} />
-            <FontAwesomeIcon icon={faCartShopping} />
+            <Link to="/cart">
+              <FontAwesomeIcon icon={faCartShopping} />
+            </Link>
           </div>
         </div>
       </div>
@@ -142,7 +144,7 @@ const Navbar = () => {
         className={
           nav
             ? "fixed md:hidden top-12 left-0  w-full h-[50%] z-10 ease-in duration-300 bg-white opacity-100"
-            : "fixed ease-out w-full  left-0 h-[50%] z-10 md:hidden duration-300 opacity-0 bg-white  "
+            : "hidden"
         }
       >
         <div className="flex space-x-2 text-[10px] text-gray-500 items-center justify-center py-2 border-t">
