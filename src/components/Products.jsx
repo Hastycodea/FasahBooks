@@ -8,17 +8,29 @@ import {
 import axios from "axios";
 
 const Products = () => {
-  const [sellers, setSellers] = useState([]);
+  const [fiction, setFiction] = useState([]);
+  const [nonFiction, setNonFiction] = useState([])
 
   useEffect(() => {
     const fetchBooks = async () => {
       const res = await axios.get(
           `https://api.nytimes.com/svc/books/v3/lists/current/hardcover-fiction.json?api-key=${import.meta.env.VITE_BOOKS_API}`
       );
-      setSellers(res.data.results.books);
-      console.log(res.data.results.books);
+      setFiction(res.data.results.books);
+      // console.log(res.data.results.books);
     };
     fetchBooks();
+  }, []);
+
+  useEffect(() => {
+    const fetchNonFiction = async () => {
+      const results = await axios.get(
+          `https://api.nytimes.com/svc/books/v3/lists/current/hardcover-nonfiction.json?api-key=${import.meta.env.VITE_BOOKS_API}`
+      );
+      setNonFiction(results.data.results.books);
+      // console.log(res.data.results.books);
+    };
+    fetchNonFiction();
   }, []);
 
   const books = [
@@ -103,6 +115,7 @@ const Products = () => {
           </div>
         ))}
 
+
         {books.map((book) => (
           // eslint-disable-next-line react/jsx-key
           <div className="flex flex-col group relative">
@@ -176,7 +189,46 @@ const Products = () => {
       </div>
 
       <div className="grid grid-cols-2 md:grid-cols-6 gap-4 px-6">
-        {sellers.slice(0, 12).map((book) => (
+        {fiction.slice(0, 12).map((book) => (
+          // eslint-disable-next-line react/jsx-key
+          <div className="flex flex-col group relative">
+            <img
+              src={book.book_image}
+              alt=""
+              className="h-[280px] w-[100%] object-contain hover:scale-95 duration-300 ease-out"
+            />
+            <div className="hidden md:group-hover:flex absolute  flex-col space-y-[130px]  md:px-5  md:py-3 top-0 right-0 my-3 md:my:0">
+              <div className="flex flex-col space-y-2">
+                <FontAwesomeIcon
+                  className="hover:text-[#DB980A] duration-300 bg-white p-2 rounded-[50%] shadow-md text-gray-600"
+                  icon={faHeart}
+                />
+                <FontAwesomeIcon
+                  className="hover:text-[#DB980A] duration-300 bg-white p-2 rounded-[50%] shadow-md text-gray-600"
+                  icon={faEye}
+                />
+              </div>
+              <FontAwesomeIcon
+                className="hover:text-[#DB980A] duration-300 bg-white p-2 rounded-[50%] shadow-md text-gray-600 "
+                icon={faCartShopping}
+              />
+            </div>
+            <p className="text-sm text-gray-500">{book.title}</p>
+            <p className="text-sm text-gray-500">{book.price}</p>
+          </div>
+        ))}
+      </div>
+
+
+
+      <div className="flex  items-center justify-center my-10 ">
+        <span className="flex-grow h-px bg-gray-300"></span>
+        <p className="text-xl px-4">Non Fiction Books</p>
+        <span className="flex-grow h-px bg-gray-300"></span>
+      </div>
+
+      <div className="grid grid-cols-2 md:grid-cols-6 gap-4 px-6">
+        {nonFiction.slice(0, 12).map((book) => (
           // eslint-disable-next-line react/jsx-key
           <div className="flex flex-col group relative">
             <img
