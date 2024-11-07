@@ -30,8 +30,6 @@ const Hero = () => (
       slidesPerView={1}
       navigation
       pagination={{ clickable: true }}
-      onSlideChange={() => console.log("slide change")}
-      onSwiper={(swiper) => console.log(swiper)}
     >
       <SwiperSlide>
         <div className="flex   items-center justify-center bg-[#FF6D1F] h-[300px] md:h-[500px] mb-5 w-full md:w-full">
