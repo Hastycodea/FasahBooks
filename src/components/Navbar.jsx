@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, {  useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Link } from "react-router-dom";
 import { faXTwitter, faWhatsapp } from "@fortawesome/free-brands-svg-icons";
@@ -21,6 +21,14 @@ const Navbar = () => {
   const toggleNav = () => {
     setNav(!nav);
   };
+
+  // const [sticky, setSticky] = useState(false);
+
+  // useEffect(() => {
+  //   window.addEventListener("scroll", ()=> {
+  //     window.scrollY() > 10 ? setSticky(true) : setSticky(false);
+  //   });
+  // }, []);
 
   return (
     <div className="px-2 md:px-5 w-full md:static sticky top-0 z-10 bg-white py-2">

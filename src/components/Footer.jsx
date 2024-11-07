@@ -6,6 +6,7 @@ import {
   faShield,
   faTruck,
 } from "@fortawesome/free-solid-svg-icons";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
@@ -59,17 +60,29 @@ const Footer = () => {
         <div className="text-xs md:text-sm text-white text-left">
           <h6 className="mb-2 font-semibold">ABOUT FASAH</h6>
           <div className="text-gray-500 space-y-1">
-            <p>Our Story</p>
-            <p>Blog</p>
-            <p>Contact Us</p>
+            <Link to="/" className="pointer hover:text-[#DB980A] duration-300 ">
+              <p>Our Story</p>
+            </Link>
+            <Link to="/" className="pointer hover:text-[#DB980A] duration-300 ">
+              <p>Blog</p>
+            </Link>
+            <Link to="/" className="pointer hover:text-[#DB980A] duration-300 ">
+              <p>Contact Us</p>
+            </Link>
           </div>
         </div>
         <div className="text-xs md:text-sm text-white text-left">
           <h6 className="mb-2 font-semibold">USEFUL LINKS</h6>
           <div className="text-gray-500 space-y-1">
-            <p>Delivery Policy</p>
-            <p>Return Policy</p>
-            <p>Gift Card Balance</p>
+            <Link to="/" className="pointer hover:text-[#DB980A] duration-300 ">
+              <p>Delivery Policy</p>
+            </Link>
+            <Link to="/" className="pointer hover:text-[#DB980A] duration-300 ">
+              <p>Return Policy</p>
+            </Link>
+            <Link to="/" className="pointer hover:text-[#DB980A] duration-300 ">
+              <p>Gift Card Balance</p>
+            </Link>
           </div>
         </div>
         <div className="text-xs md:text-sm text-white text-left">
