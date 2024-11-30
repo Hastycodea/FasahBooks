@@ -10,6 +10,7 @@ import About from "./pages/About";
 import User from "./pages/User";
 import Wishlist from "./pages/Wishlist";
 import Cart from "./pages/Cart";
+import SingleBook from "./pages/SingleBook";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         <Navbar />
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/book/:id" element={<SingleBook />} />
           <Route path="/books" element={<Books />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/gift" element={<Gift />} />
