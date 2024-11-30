@@ -85,6 +85,7 @@ const Navbar = () => {
               className="hover:text-[#DB980A] duration-300"
               icon={faCartShopping}
             />
+            <p className="absolute top-[78px] right-4 z-50 bg-blue-400   rounded-full h-5 w-5 flex items-center justify-center text-white text-[12px] ">0</p>
           </Link>
         </div>
       </div>
