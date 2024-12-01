@@ -12,12 +12,12 @@ const Cart = () => {
       {cartItems.length === 0 ? (
         <p>Your Cart is Empty</p>
       ) : (
-        <div className="flex justify-between">
-          <div className="w-[65%]">
+        <div className="md:flex justify-between">
+          <div className="md:w-[65%]">
             {cartItems.map((item) => (
-              <div className="flex items-center justify-between  my-4 pb-4 border-b border-gray-300">
+              <div className="md:flex items-center justify-between  my-4 pb-4 border-b border-gray-300">
                 <div className="flex gap-8 items-center  ">
-                  <p>X</p>
+                  <p className="transform hover:rotate-180 duration-300 transition-all cursor-pointer text-2xl text-gray-500">X</p>
                   <img src={item.image} alt="" className="w-[100px] h-auto" />
                   <p>{item.name}</p>
                 </div>
@@ -33,8 +33,8 @@ const Cart = () => {
               </div>
             ))}
           </div>
-          <div className="w-[35%] flex  justify-center">
-            <h2>Cart Totals</h2>
+          <div className="w-[35%] ">
+            <h2 className="flex  justify-center">Cart Totals</h2>
           </div>
         </div>
       )}
