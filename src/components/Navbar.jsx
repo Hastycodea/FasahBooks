@@ -1,4 +1,4 @@
-import React, {  useState } from "react";
+import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Link } from "react-router-dom";
 import { faXTwitter, faWhatsapp } from "@fortawesome/free-brands-svg-icons";
@@ -14,6 +14,7 @@ import {
   faClose,
 } from "@fortawesome/free-solid-svg-icons";
 import logo from "../assets/logo.png";
+import { useSelector } from "react-redux";
 
 const Navbar = () => {
   const [nav, setNav] = useState(false);
@@ -22,13 +23,8 @@ const Navbar = () => {
     setNav(!nav);
   };
 
-  // const [sticky, setSticky] = useState(false);
-
-  // useEffect(() => {
-  //   window.addEventListener("scroll", ()=> {
-  //     window.scrollY() > 10 ? setSticky(true) : setSticky(false);
-  //   });
-  // }, []);
+  const cartItems = useSelector((state) => state.cart.cartItems);
+  const totalItems = cartItems.length;
 
   return (
     <div className="px-2 md:px-5 w-full md:static sticky top-0 z-10 bg-white py-2">
@@ -85,7 +81,7 @@ const Navbar = () => {
               className="hover:text-[#DB980A] duration-300"
               icon={faCartShopping}
             />
-            <p className="absolute top-[78px] right-4 z-50 bg-blue-400   rounded-full h-5 w-5 flex items-center justify-center text-white text-[12px] ">0</p>
+            <p className="absolute top-[78px] right-4 z-50 bg-blue-400   rounded-full h-5 w-5 flex items-center justify-center text-white text-[12px] ">{totalItems}</p>
           </Link>
         </div>
       </div>

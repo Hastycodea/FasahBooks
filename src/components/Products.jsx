@@ -7,6 +7,8 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { addToCart } from "../redux/cartSlice";
 
 const Products = () => {
   const [fiction, setFiction] = useState([]);
@@ -16,6 +18,12 @@ const Products = () => {
 
   const handleViewDetails = (id) => {
     navigate(`/book/${id}`)
+  }
+
+  const dispatch = useDispatch()
+
+  const handleAddToCart = (item) => {
+    dispatch(addToCart(item))
   }
 
   useEffect(() => {
@@ -106,6 +114,7 @@ const Products = () => {
               <FontAwesomeIcon
                 className="hover:text-[#DB980A] duration-300 bg-white p-2 rounded-[50%] shadow-md text-gray-600 "
                 icon={faCartShopping}
+                onClick={() => handleAddToCart(book)}
               />
             </div>
             <p className="text-sm text-gray-500">{book.name}</p>
