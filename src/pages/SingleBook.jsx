@@ -1,5 +1,7 @@
 import React from "react";
+import { useDispatch } from "react-redux";
 import { useParams } from "react-router-dom";
+import { addToCart } from "../redux/cartSlice";
 
 const SingleBook = () => {
   const books = [
@@ -42,8 +44,14 @@ const SingleBook = () => {
     },
   ];
 
-  const { id } = useParams();
-  const book = books.find((book) => book.id === parseInt(id));
+  const { name } = useParams();
+  const book = books.find((book) => book.name === name);
+
+  const dispatch = useDispatch()
+
+  const handleAddToCart = (book) => {
+    dispatch(addToCart(book))
+  }
 
   return (
     <div className="md:flex justify-between md:w-[80%] mx-auto my-11">
@@ -61,7 +69,7 @@ const SingleBook = () => {
             vitae modi ullam! Inventore saepe eveniet veritatis quisquam rerum
             voluptate, odit, error iste unde velit mollitia deleniti provident!
           </p>
-          <button className="btn bg-black text-white py-3 px-10 w-[100%]">
+          <button onClick={() => handleAddToCart(book)} className="btn bg-black text-white py-3 px-10 w-[100%] hover:bg-blue-500 hover:text-white duration-300 transition-all ">
             + Add to Cart
           </button>
         </div>

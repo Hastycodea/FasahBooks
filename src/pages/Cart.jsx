@@ -1,6 +1,7 @@
 /* eslint-disable react/jsx-key */
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { decreaseQuantity, increaseQuantity, removeFromCart } from "../redux/cartSlice";
 
 const Cart = () => {
   const cartItems = useSelector((state) => state.cart.cartItems);
@@ -14,19 +15,19 @@ const Cart = () => {
       ) : (
         <div className="md:flex justify-between">
           <div className="md:w-[65%]">
-            {cartItems.map((item) => (
-              <div className="md:flex items-center justify-between  my-4 pb-4 border-b border-gray-300">
+            {cartItems.map((item, index) => (
+              <div key={index} className="md:flex items-center justify-between  my-4 pb-4 border-b border-gray-300">
                 <div className="flex gap-8 items-center  ">
-                  <p className="transform hover:rotate-180 duration-300 transition-all cursor-pointer text-2xl text-gray-500">X</p>
+                  <p className="transform hover:rotate-180 duration-300 transition-all cursor-pointer text-2xl text-gray-500" onClick={() => dispatch(removeFromCart(item))}>X</p>
                   <img src={item.image} alt="" className="w-[100px] h-auto" />
                   <p>{item.name}</p>
                 </div>
-                <div className="flex gap-6">
+                <div className="flex items-center gap-6">
                   <p>{item.price}</p>
-                  <div className="flex gap-2">
-                    <p>-</p>
-                    <p>2</p>
-                    <p>+</p>
+                  <div className="flex items-center justify-center gap-2">
+                    <p onClick={() => dispatch(decreaseQuantity(item))} className="cursor-pointer w-6 h-6 bg-blue-200 rounded-sm flex items-center justify-center">-</p>
+                    <p>{item.quantity}</p>
+                    <p onClick={() => dispatch(increaseQuantity(item))} className="cursor-pointer w-6 h-6 bg-blue-200 rounded-sm flex items-center justify-center">+</p>
                   </div>
                   <p>{item.price}</p>
                 </div>
