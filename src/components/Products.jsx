@@ -127,6 +127,7 @@ const Products = () => {
               <FontAwesomeIcon
                 className="hover:text-[#DB980A] duration-300 bg-white p-2 rounded-[50%] shadow-md text-gray-600 "
                 icon={faCartShopping}
+                onClick={() => handleAddToCart(book)}
               />
             </div>
           </div>
