@@ -9,27 +9,34 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { addToCart } from "../redux/cartSlice";
+import { addToWish } from "../redux/wishSlice";
 
 const Products = () => {
   const [fiction, setFiction] = useState([]);
-  const [nonFiction, setNonFiction] = useState([])
+  const [nonFiction, setNonFiction] = useState([]);
 
   const navigate = useNavigate();
 
   const handleViewDetails = (name) => {
-    navigate(`/book/${name}`)
-  }
+    navigate(`/book/${name}`);
+  };
 
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
 
   const handleAddToCart = (item) => {
-    dispatch(addToCart(item))
-  }
+    dispatch(addToCart(item));
+  };
+
+  const handleAddToWish = (item) => {
+    dispatch(addToWish(item));
+  };
 
   useEffect(() => {
     const fetchBooks = async () => {
       const res = await axios.get(
-          `https://api.nytimes.com/svc/books/v3/lists/current/hardcover-fiction.json?api-key=${import.meta.env.VITE_BOOKS_API}`
+        `https://api.nytimes.com/svc/books/v3/lists/current/hardcover-fiction.json?api-key=${
+          import.meta.env.VITE_BOOKS_API
+        }`
       );
       setFiction(res.data.results.books);
       // console.log(res.data.results.books);
@@ -40,7 +47,9 @@ const Products = () => {
   useEffect(() => {
     const fetchNonFiction = async () => {
       const results = await axios.get(
-          `https://api.nytimes.com/svc/books/v3/lists/current/hardcover-nonfiction.json?api-key=${import.meta.env.VITE_BOOKS_API}`
+        `https://api.nytimes.com/svc/books/v3/lists/current/hardcover-nonfiction.json?api-key=${
+          import.meta.env.VITE_BOOKS_API
+        }`
       );
       setNonFiction(results.data.results.books);
       // console.log(res.data.results.books);
@@ -105,6 +114,7 @@ const Products = () => {
                 <FontAwesomeIcon
                   className="hover:text-[#DB980A] duration-300 bg-white p-2 rounded-[50%] shadow-md text-gray-600"
                   icon={faHeart}
+                  onClick={() => handleAddToWish(book)}
                 />
                 <FontAwesomeIcon
                   className="hover:text-[#DB980A] duration-300 bg-white p-2 rounded-[50%] shadow-md text-gray-600"
@@ -123,6 +133,7 @@ const Products = () => {
               <FontAwesomeIcon
                 className="hover:text-[#DB980A] duration-300 bg-white p-2 rounded-[50%] shadow-md text-gray-600"
                 icon={faHeart}
+                onClick={() => handleAddToWish(book)}
               />
               <FontAwesomeIcon
                 className="hover:text-[#DB980A] duration-300 bg-white p-2 rounded-[50%] shadow-md text-gray-600 "
@@ -132,7 +143,6 @@ const Products = () => {
             </div>
           </div>
         ))}
-
 
         {books.map((book) => (
           // eslint-disable-next-line react/jsx-key
@@ -199,7 +209,6 @@ const Products = () => {
         ))}
       </div>
 
-
       <div className="flex  items-center justify-center my-10 ">
         <span className="flex-grow h-px bg-gray-300"></span>
         <p className="text-xl px-4">Fiction Books</p>
@@ -237,8 +246,6 @@ const Products = () => {
         ))}
       </div>
 
-
-
       <div className="flex  items-center justify-center my-10 ">
         <span className="flex-grow h-px bg-gray-300"></span>
         <p className="text-xl px-4">Non Fiction Books</p>
@@ -275,8 +282,6 @@ const Products = () => {
           </div>
         ))}
       </div>
-
-
     </div>
   );
 };
