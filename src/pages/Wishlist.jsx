@@ -12,7 +12,7 @@ const Wishlist = () => {
 
   return (
     <div className="w-[95%] sm:w-[70%] mx-auto">
-      <h2 className="text-3xl my-8 pb-4  ">Wishlist</h2>
+      <h2 className="text-3xl my-2 sm:my-8 pb-2 sm:pb-4  ">Wishlist</h2>
       {wishItems.length === 0 ? (
         <div className="flex flex-col items-center justify-center">
           <FontAwesomeIcon icon={faHeartCrack} className="text-7xl mb-10" />
@@ -32,9 +32,9 @@ const Wishlist = () => {
                   X
                 </p>
                 <img src={item.image} alt="" className="w-[100px]" />
-                <div className="flex flex-col items-center justify-center">
+                <div className="">
                   <p>{item.name}</p>
-                  <p className="block sm:hidden">{item.price}</p>
+                  <p className="block sm:hidden my-2">{item.price}</p>
                 </div>
               </div>
               <div className="flex items-center gap-4 md:gap-11 text-xs">
