@@ -43,7 +43,7 @@ const Wishlist = () => {
                 </p>
                 <p className="hidden md:block">IN STOCK</p>
                 <button
-                  className="flex btn bg-black text-white sm:px-6 px-2 sm:py-3 py-2 gap-2 hover:bg-blue-400 duration-300"
+                  className="flex btn bg-black text-white sm:px-6 px-2 sm:py-3 py-2 gap-1 hover:bg-blue-400 duration-300"
                   onClick={() => dispatch(addToCart(item))}
                 >
                   <p>+</p>
