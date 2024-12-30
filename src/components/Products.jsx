@@ -25,10 +25,12 @@ const Products = () => {
 
   const handleAddToCart = (item) => {
     dispatch(addToCart(item));
+    alert('Added to Cart')
   };
 
   const handleAddToWish = (item) => {
     dispatch(addToWish(item));
+    alert('Added to Wishlist')
   };
 
   useEffect(() => {
