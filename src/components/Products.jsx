@@ -25,12 +25,12 @@ const Products = () => {
 
   const handleAddToCart = (item) => {
     dispatch(addToCart(item));
-    alert('Added to Cart')
+    alert("Added to Cart");
   };
 
   const handleAddToWish = (item) => {
     dispatch(addToWish(item));
-    alert('Added to Wishlist')
+    alert("Added to Wishlist");
   };
 
   useEffect(() => {
@@ -146,34 +146,6 @@ const Products = () => {
           </div>
         ))}
 
-        {books.map((book) => (
-          // eslint-disable-next-line react/jsx-key
-          <div className="flex flex-col group relative">
-            <img
-              src={book.image}
-              alt=""
-              className="h-[280px] w-[100%] object-contain hover:scale-95 duration-300 ease-out"
-            />
-            <div className="hidden md:group-hover:flex absolute  flex-col space-y-[130px]  md:px-5  md:py-3 top-0 right-0 my-3 md:my:0">
-              <div className="flex flex-col space-y-2">
-                <FontAwesomeIcon
-                  className="hover:text-[#DB980A] duration-300 bg-white p-2 rounded-[50%] shadow-md text-gray-600"
-                  icon={faHeart}
-                />
-                <FontAwesomeIcon
-                  className="hover:text-[#DB980A] duration-300 bg-white p-2 rounded-[50%] shadow-md text-gray-600"
-                  icon={faEye}
-                />
-              </div>
-              <FontAwesomeIcon
-                className="hover:text-[#DB980A] duration-300 bg-white p-2 rounded-[50%] shadow-md text-gray-600 "
-                icon={faCartShopping}
-              />
-            </div>
-            <p className="text-sm text-gray-500">{book.name}</p>
-            <p className="text-sm text-gray-500">{book.price}</p>
-          </div>
-        ))}
       </div>
       <div className="flex  items-center justify-center my-10 ">
         <span className="flex-grow h-px bg-gray-300"></span>

@@ -131,6 +131,9 @@ const Navbar = () => {
               Contact Us
             </li>
           </Link>
+          <Link to="add_product">
+            <li className="hover:text-[#DB980A] duration-300 cursor-pointer">Add Product</li>
+          </Link>
         </ul>
       </div>
 

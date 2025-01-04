@@ -11,6 +11,7 @@ import User from "./pages/User";
 import Wishlist from "./pages/Wishlist";
 import Cart from "./pages/Cart";
 import SingleBook from "./pages/SingleBook";
+import AddProduct from "./pages/AddProduct";
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
           <Route path="/book/:name" element={<SingleBook />} />
           <Route path="/books" element={<Books />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/add_product" element={<AddProduct />} />
           <Route path="/gift" element={<Gift />} />
           <Route path="/about" element={<About />} />
           <Route path="/user" element={<User />} />
