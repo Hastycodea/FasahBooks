@@ -14,6 +14,7 @@ import { addToWish } from "../redux/wishSlice";
 const Products = () => {
   const [fiction, setFiction] = useState([]);
   const [nonFiction, setNonFiction] = useState([]);
+  const [read, setRead] = useState([]);
 
   const navigate = useNavigate();
 
@@ -32,6 +33,19 @@ const Products = () => {
     dispatch(addToWish(item));
     alert("Added to Wishlist");
   };
+
+  useEffect(() => {
+    const fetchReads = async () => {
+      try {
+        const res = await axios.get("http://localhost:3030/books");
+        setRead(res.data);
+        console.log("Books Loaded", res.data);
+      } catch (error) {
+        console.log("Error fetching books", error);
+      }
+    };
+    fetchReads();
+  }, []);
 
   useEffect(() => {
     const fetchBooks = async () => {
@@ -145,7 +159,56 @@ const Products = () => {
             </div>
           </div>
         ))}
-
+      </div>
+      <div className="flex  items-center justify-center my-10 ">
+        <span className="flex-grow h-px bg-gray-300"></span>
+        <p className="text-xl px-4">Fetched From DB</p>
+        <span className="flex-grow h-px bg-gray-300"></span>
+      </div>
+      <div className="grid grid-cols-2 md:grid-cols-6 gap-4 px-6">
+        {read.map((book) => (
+          // eslint-disable-next-line react/jsx-key
+          <div className="flex flex-col group relative">
+            <img
+              src={`http://localhost:3030/book/${book.id}/image`}
+              alt=""
+              className="h-[280px] w-[100%] object-contain hover:scale-95 duration-300 ease-out"
+              onClick={() => handleViewDetails(book.bookName)}
+            />
+            <div className="hidden md:group-hover:flex absolute  flex-col space-y-[130px]  md:px-5  md:py-3 top-0 right-0 my-3 md:my:0">
+              <div className="flex flex-col space-y-2">
+                <FontAwesomeIcon
+                  className="hover:text-[#DB980A] duration-300 bg-white p-2 rounded-[50%] shadow-md text-gray-600"
+                  icon={faHeart}
+                  onClick={() => handleAddToWish(book)}
+                />
+                <FontAwesomeIcon
+                  className="hover:text-[#DB980A] duration-300 bg-white p-2 rounded-[50%] shadow-md text-gray-600"
+                  icon={faEye}
+                />
+              </div>
+              <FontAwesomeIcon
+                className="hover:text-[#DB980A] duration-300 bg-white p-2 rounded-[50%] shadow-md text-gray-600 "
+                icon={faCartShopping}
+                onClick={() => handleAddToCart(book)}
+              />
+            </div>
+            <p className="text-sm text-gray-500">{book.bookName}</p>
+            <p className="text-sm text-gray-500">{book.bookPrice}</p>
+            <div className="flex md:hidden items-center justify-between mx-auto space-x-2 ">
+              <FontAwesomeIcon
+                className="hover:text-[#DB980A] duration-300 bg-white p-2 rounded-[50%] shadow-md text-gray-600"
+                icon={faHeart}
+                onClick={() => handleAddToWish(book)}
+              />
+              <FontAwesomeIcon
+                className="hover:text-[#DB980A] duration-300 bg-white p-2 rounded-[50%] shadow-md text-gray-600 "
+                icon={faCartShopping}
+                onClick={() => handleAddToCart(book)}
+              />
+            </div>
+          </div>
+        ))}
       </div>
       <div className="flex  items-center justify-center my-10 ">
         <span className="flex-grow h-px bg-gray-300"></span>
