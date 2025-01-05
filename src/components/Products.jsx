@@ -21,6 +21,10 @@ const Products = () => {
   const handleViewDetails = (name) => {
     navigate(`/book/${name}`);
   };
+  
+  const handleReadDetails = (id) => {
+    navigate(`/book/${id}`);
+  };
 
   const dispatch = useDispatch();
 
@@ -173,7 +177,7 @@ const Products = () => {
               src={`http://localhost:3030/book/${book.id}/image`}
               alt=""
               className="h-[280px] w-[100%] object-contain hover:scale-95 duration-300 ease-out"
-              onClick={() => handleViewDetails(book.bookName)}
+              onClick={() => handleReadDetails(book.id)}
             />
             <div className="hidden md:group-hover:flex absolute  flex-col space-y-[130px]  md:px-5  md:py-3 top-0 right-0 my-3 md:my:0">
               <div className="flex flex-col space-y-2">

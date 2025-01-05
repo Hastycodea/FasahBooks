@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { useParams } from "react-router-dom";
 import { addToCart } from "../redux/cartSlice";
+import axios from "axios";
 
 const SingleBook = () => {
   const books = [
@@ -44,18 +45,35 @@ const SingleBook = () => {
     },
   ];
 
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  const [read, setRead] = useState([]);
+  const { id } = useParams();
+
   const { name } = useParams();
   const book = books.find((book) => book.name === name);
 
-  const dispatch = useDispatch()
+  useEffect(() => {
+    const fetchRead = async () => {
+      try {
+        const res = await axios.get(`http://localhost:3030/book/${id}`);
+        setRead(res.data);
+        console.log("Book fetched", res.data);
+      } catch (error) {
+        console.log("Error fetching book", error);
+      }
+    };
+    fetchRead();
+  }, [id]);
+
+  const dispatch = useDispatch();
 
   const handleAddToCart = (book) => {
-    dispatch(addToCart(book))
-  }
+    dispatch(addToCart(book));
+  };
 
   return (
     <div className="md:flex justify-between md:w-[80%] mx-auto my-11">
-      <div className="md:flex gap-8">
+      {/* <div className="md:flex gap-8">
         <img src={book.image} alt="" className="mx-auto md:mx-0 mb-4 md:mb-0" />
         <div className="w-[95%] md:w-[100%] mx-auto md:mx-0">
           <p>{book.name}</p>
@@ -70,6 +88,21 @@ const SingleBook = () => {
             voluptate, odit, error iste unde velit mollitia deleniti provident!
           </p>
           <button onClick={() => handleAddToCart(book)} className="btn bg-black text-white py-3 px-10 w-[100%] hover:bg-blue-500 hover:text-white duration-300 transition-all ">
+            + Add to Cart
+          </button>
+        </div>
+      </div> */}
+
+      <div className="md:flex gap-8">
+        <img src={`http://localhost:3030/book/${read.id}/image`} alt="" className="mx-auto md:mx-0 mb-4 md:mb-0" />
+        <div className="w-[95%] md:w-[100%] mx-auto md:mx-0">
+          <p>{read.bookName}</p>
+          <p className="text-3xl my-4">{read.bookPrice}</p>
+          <p className="font-light text-gray-500 mb-4 md:w-[450px] leading-loose">{read.bookDescription}</p>
+          <button
+            onClick={() => handleAddToCart(book)}
+            className="btn bg-black text-white py-3 px-10 w-[100%] hover:bg-blue-500 hover:text-white duration-300 transition-all "
+          >
             + Add to Cart
           </button>
         </div>
