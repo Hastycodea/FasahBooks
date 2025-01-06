@@ -80,7 +80,10 @@ const Cart = () => {
                       +
                     </p>
                   </div>
-                  <p><span className="text-gray-600 font-light">KES</span> {item.bookPrice}</p>
+                  <p>
+                    <span className="text-gray-600 font-light">KES</span>{" "}
+                    {item.bookPrice}
+                  </p>
                 </div>
               </div>
             ))}
@@ -92,7 +95,12 @@ const Cart = () => {
                 <p className="font-medium">Subtotal</p>
               </div>
               <div className="col-span-8">
-                <p>KES 3,340</p>
+                <p>
+                  KES{" "}
+                  {cartItems.reduce((accumulator, item) => {
+                    return accumulator + item.bookPrice * item.quantity;
+                  }, 0)}
+                </p>
               </div>
             </div>
             <div className="grid grid-cols-12 text-sm font-light border-b border-gray-300 py-5">
@@ -106,7 +114,10 @@ const Cart = () => {
                 </label>
                 <label className="flex gap-2">
                   <input type="radio" name="option" />
-                  <p>Rest of Nairobi, Central, Nyanza, Western, Nakuru, Naivasha, Eldoret, Coast (Not Lamu): KES 300</p>
+                  <p>
+                    Rest of Nairobi, Central, Nyanza, Western, Nakuru, Naivasha,
+                    Eldoret, Coast (Not Lamu): KES 300
+                  </p>
                 </label>
                 <label className="flex gap-2">
                   <input type="radio" name="option" />
@@ -119,10 +130,17 @@ const Cart = () => {
                 <p className="font-medium">Subtotal</p>
               </div>
               <div className="col-span-8">
-                <p className="font-medium text-3xl">KES 3,340</p>
+                <p className="font-medium text-3xl">
+                  <span className="font-light text-gray-600">KES</span>{" "}
+                  {cartItems.reduce((accumulator, item) => {
+                    return accumulator + item.bookPrice * item.quantity;
+                  }, 0)}
+                </p>
               </div>
             </div>
-            <button className="bg-black text-white w-full py-2">Proceed To Checkout</button>
+            <button className="bg-black text-white w-full py-2">
+              Proceed To Checkout
+            </button>
           </div>
         </div>
       )}
