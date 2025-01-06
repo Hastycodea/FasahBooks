@@ -47,20 +47,22 @@ const Cart = () => {
                       X
                     </p>
                     <img
-                      src={item.image}
+                      // src={item.image}
+                      src={`http://localhost:3030/book/${item.id}/image`}
                       alt=""
                       className="w-[30vw] md:w-[100px] h-auto"
                     />
                   </div>
-                  <p className="hidden md:block">{item.name}</p>
+                  {/* <p className="hidden md:block">{item.name}</p> */}
+                  <p className="hidden md:block">{item.bookName}</p>
                 </div>
                 <div>
                   <p className="flex mb-5 md:hidden justify-center">
-                    {item.name}
+                    {item.bookName}
                   </p>
                 </div>
                 <div className="flex justify-center  items-center gap-6 text-sm md:text-base">
-                  <p>{item.price}</p>
+                  <p>{item.bookPrice}</p>
                   <div className="flex items-center justify-center gap-2">
                     <p
                       onClick={() => dispatch(decreaseQuantity(item))}
@@ -78,7 +80,7 @@ const Cart = () => {
                       +
                     </p>
                   </div>
-                  <p>{item.price}</p>
+                  <p><span className="text-gray-600 font-light">KES</span> {item.bookPrice}</p>
                 </div>
               </div>
             ))}

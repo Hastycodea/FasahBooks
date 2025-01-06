@@ -49,8 +49,8 @@ const SingleBook = () => {
   const [read, setRead] = useState([]);
   const { id } = useParams();
 
-  const { name } = useParams();
-  const book = books.find((book) => book.name === name);
+  // const { name } = useParams();
+  // const book = books.find((book) => book.name === name);
 
   useEffect(() => {
     const fetchRead = async () => {
@@ -67,8 +67,9 @@ const SingleBook = () => {
 
   const dispatch = useDispatch();
 
-  const handleAddToCart = (book) => {
-    dispatch(addToCart(book));
+  const handleAddToCart = (read) => {
+    dispatch(addToCart(read));
+    alert("Added to cart")
   };
 
   return (
@@ -100,7 +101,7 @@ const SingleBook = () => {
           <p className="text-3xl my-4">{read.bookPrice}</p>
           <p className="font-light text-gray-500 mb-4 md:w-[450px] leading-loose">{read.bookDescription}</p>
           <button
-            onClick={() => handleAddToCart(book)}
+            onClick={() => handleAddToCart(read)}
             className="btn bg-black text-white py-3 px-10 w-[100%] hover:bg-blue-500 hover:text-white duration-300 transition-all "
           >
             + Add to Cart
