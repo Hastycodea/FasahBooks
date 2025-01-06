@@ -69,7 +69,7 @@ const SingleBook = () => {
 
   const handleAddToCart = (read) => {
     dispatch(addToCart(read));
-    alert("Added to cart")
+    alert("Added to cart");
   };
 
   return (
@@ -95,11 +95,17 @@ const SingleBook = () => {
       </div> */}
 
       <div className="md:flex gap-8">
-        <img src={`http://localhost:3030/book/${read.id}/image`} alt="" className="mx-auto md:mx-0 mb-4 md:mb-0" />
+        <img
+          src={`http://localhost:3030/book/${read.id}/image`}
+          alt=""
+          className="mx-auto md:mx-0 mb-4 md:mb-0"
+        />
         <div className="w-[95%] md:w-[100%] mx-auto md:mx-0">
           <p>{read.bookName}</p>
           <p className="text-3xl my-4">{read.bookPrice}</p>
-          <p className="font-light text-gray-500 mb-4 md:w-[450px] leading-loose">{read.bookDescription}</p>
+          <p className="font-light text-gray-500 mb-4 md:w-[450px] leading-loose">
+            {read.bookDescription}
+          </p>
           <button
             onClick={() => handleAddToCart(read)}
             className="btn bg-black text-white py-3 px-10 w-[100%] hover:bg-blue-500 hover:text-white duration-300 transition-all "
