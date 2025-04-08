@@ -96,7 +96,7 @@ const Footer = () => {
       </div>
       <p className="bg-[#] text-black text-xs gap-2 flex items-center justify-center py-2">
         {" "}
-        &copy; 2024 FASAH BOOKS<span> All rights reserved</span>
+        &copy; 2025 FASAH BOOKS<span> All rights reserved</span>
       </p>
     </div>
   );
