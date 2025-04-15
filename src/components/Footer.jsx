@@ -15,7 +15,7 @@ const Footer = () => {
         <div className="flex items-center gap-3">
           <FontAwesomeIcon className="text-[#D89A0D] text-3xl" icon={faTruck} />
           <div className="text-xs text-gray-800">
-            <h3>QUICK DELIVERY</h3>
+            <h3>INSTANT DELIVERIES</h3>
             <p>Swift dispatch</p>
           </div>
         </div>
@@ -96,7 +96,7 @@ const Footer = () => {
       </div>
       <p className="bg-[#] text-black text-xs gap-2 flex items-center justify-center py-2">
         {" "}
-        &copy; 2025 FASAH BOOKS<span> All rights reserved</span>
+        &copy; 2026 FASAH BOOKS<span> All rights reserved</span>
       </p>
     </div>
   );
