@@ -8,6 +8,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
 
+
 const Footer = () => {
   return (
     <div className="mt-10">
@@ -35,8 +36,8 @@ const Footer = () => {
             icon={faShield}
           />
           <div className="text-xs text-gray-800">
-            <h3>WIDE VARIETY</h3>
-            <p>Thousands of Books</p>
+            <h3>Diverse Variety</h3>
+            <p>Hundreds of Books</p>
           </div>
         </div>
         <div className="flex items-center gap-3">
